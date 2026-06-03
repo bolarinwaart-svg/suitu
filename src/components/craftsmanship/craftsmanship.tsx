@@ -21,7 +21,7 @@ export function Craftsmanship() {
         Desktop layout starts at xl. Tablet uses the stacked layout below,
         which gives the image pair and copy their own rows.
       */}
-      <div className="hidden min-w-0 items-start gap-[clamp(4rem,8.85vw,11.5rem)] xl:grid xl:grid-cols-[minmax(48rem,64.25vw)_minmax(20rem,22.2vw)]">
+      <div className="hidden min-w-0 items-start gap-[clamp(4rem,8.85vw,8.5rem)] xl:grid xl:grid-cols-[minmax(0,1fr)_21.25rem]">
         <div className="grid min-w-0 grid-cols-[minmax(0,510fr)_minmax(0,470fr)] items-start gap-4">
           <div className="relative aspect-[510/640] min-w-0">
             <Image
@@ -42,11 +42,11 @@ export function Craftsmanship() {
             />
           </div>
         </div>
-        <div className="flex w-[clamp(20rem,22.2vw,28rem)] min-w-0 flex-col items-start gap-8">
+        <div className="flex w-full min-w-0 flex-col items-start gap-8">
           <div className="flex flex-col gap-6">
             <h2
               id="craft-title"
-              className="max-w-[19ch] text-[clamp(2.5rem,2.7vw,3.125rem)] font-bold uppercase leading-[1.2]"
+              className="w-full text-[3.125rem] font-bold uppercase leading-[1.2]"
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.125rem",

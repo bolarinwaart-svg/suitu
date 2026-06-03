@@ -27,14 +27,14 @@ const cards: Card[] = [
 
 export function ShowcasePair() {
   return (
-    <section className="flex w-full flex-col gap-2 bg-black lg:flex-row">
+    <section className="flex w-full flex-col gap-2 bg-black min-[900px]:flex-row">
       {cards.map((card, i) => (
         <article
           key={card.title}
           className={[
             "relative isolate flex overflow-hidden bg-[#f4f4f4]",
             "aspect-[752/1010] p-[clamp(1.25rem,4vw,3rem)]",
-            "lg:flex-1",
+            "min-[900px]:flex-1",
           ].join(" ")}
         >
           <Image
@@ -50,7 +50,7 @@ export function ShowcasePair() {
           <div className="relative z-10 mt-auto grid w-full grid-cols-[minmax(0,1fr)_auto] items-end gap-[clamp(1rem,3vw,2rem)]">
             <div className="flex min-w-0 flex-col items-start gap-[clamp(0.5rem,1.4vw,1rem)]">
               <h3
-                className="max-w-[14ch] text-[clamp(2.25rem,5vw,3.125rem)] font-bold uppercase text-black"
+                className="max-w-[14ch] text-[clamp(1.75rem,3.5vw,3.125rem)] font-bold uppercase text-black"
                 style={{
                   fontFamily: "var(--font-heading)",
                   lineHeight: 1.2,
