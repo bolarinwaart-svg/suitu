@@ -54,24 +54,30 @@ export function BestSellers({
       </div>
 
       {/* Copy block */}
-      <div className="flex flex-col gap-4 px-5 py-6 md:w-[31.875rem] md:gap-6 md:px-12 md:pb-8 md:pt-8">
+      <div className="flex max-w-[min(100%,34rem)] flex-col gap-[clamp(1rem,2vw,1.5rem)] px-5 py-6 md:px-12 md:pb-8 md:pt-8">
         <h2
-          className="text-fluid-h2-inv font-bold uppercase leading-[1.2] text-white"
+          className="text-[clamp(2.5rem,4vw,3.75rem)] font-bold uppercase leading-[1.05] text-white"
           style={{
             fontFamily: "var(--font-heading)",
             letterSpacing: "0.125rem",
+            textWrap: "balance",
           }}
         >
           {title}
         </h2>
         <p
-          className="text-base leading-[1.5] text-white"
-          style={{ fontFamily: "var(--font-roboto)" }}
+          className="max-w-[31ch] text-[clamp(1rem,1.1vw,1.125rem)] leading-[1.5] text-white lg:max-w-[40ch]"
+          style={{ fontFamily: "var(--font-roboto)", textWrap: "pretty" }}
         >
           {body}
         </p>
-        <div className="pt-4 md:pt-0">
-          <ButtonSecondary tone="cream">{ctaLabel}</ButtonSecondary>
+        <div className="pt-[clamp(0.25rem,1vw,1rem)] md:pt-0">
+          <ButtonSecondary
+            tone="cream"
+            className="max-w-full justify-center px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(0.625rem,1vw,0.75rem)] text-[clamp(0.875rem,1.2vw,1rem)] text-center"
+          >
+            {ctaLabel}
+          </ButtonSecondary>
         </div>
       </div>
     </section>

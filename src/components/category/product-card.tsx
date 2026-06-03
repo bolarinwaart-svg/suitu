@@ -29,7 +29,7 @@ export function ProductCard({ src, alt, preorder = false }: ProductCardProps) {
       />
       {preorder && (
         <span
-          className="absolute left-2 top-2 md:left-4 md:top-4 text-xs md:text-lg text-black"
+          className="absolute left-2 top-2 text-[clamp(0.75rem,0.9vw,0.875rem)] text-black md:left-4 md:top-4"
           style={{ fontFamily: "var(--font-roboto)", lineHeight: 1.5 }}
         >
           PREORDER

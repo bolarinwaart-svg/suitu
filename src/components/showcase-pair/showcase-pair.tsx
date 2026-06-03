@@ -27,46 +27,44 @@ const cards: Card[] = [
 
 export function ShowcasePair() {
   return (
-    <section className="flex w-full flex-col gap-2 md:flex-row">
+    <section className="flex w-full flex-col gap-2 bg-black lg:flex-row">
       {cards.map((card, i) => (
         <article
           key={card.title}
           className={[
-            "relative flex flex-col overflow-hidden bg-[#f4f4f4]",
-            "p-5 md:p-12",
-            "aspect-[375/520]",
-            "sm:aspect-[752/900] md:aspect-[752/1010] md:flex-1",
+            "relative isolate flex overflow-hidden bg-[#f4f4f4]",
+            "aspect-[752/1010] p-[clamp(1.25rem,4vw,3rem)]",
+            "lg:flex-1",
           ].join(" ")}
         >
           <Image
             src={card.src}
             alt={card.alt}
             fill
-            sizes="(min-width: 48rem) 50vw, 100vw"
+            sizes="(min-width: 64rem) 50vw, 100vw"
             className="object-cover object-top"
             quality={100}
             priority={i === 0}
           />
 
-          {/* Heading sits top-left; tagline bottom-left; SHOP NOW bottom-right.
-              The link column reserves width on the right, so the heading wraps
-              to two lines (Figma node 4508:18392). */}
-          <div className="relative flex flex-1 items-end gap-6">
-            <div className="flex h-full flex-1 flex-col items-start justify-between">
+          <div className="relative z-10 mt-auto grid w-full grid-cols-[minmax(0,1fr)_auto] items-end gap-[clamp(1rem,3vw,2rem)]">
+            <div className="flex min-w-0 flex-col items-start gap-[clamp(0.5rem,1.4vw,1rem)]">
               <h3
-                className="max-w-[8.5rem] text-[2rem] font-bold uppercase text-black min-[360px]:text-[2.25rem] sm:text-fluid-h2 md:max-w-none"
+                className="max-w-[14ch] text-[clamp(2.25rem,5vw,3.125rem)] font-bold uppercase text-black"
                 style={{
                   fontFamily: "var(--font-heading)",
                   lineHeight: 1.2,
+                  letterSpacing: "0",
                 }}
               >
                 {card.title}
               </h3>
               <p
-                className="max-w-[10rem] text-black text-[1rem] md:max-w-none"
+                className="max-w-[24ch] text-[clamp(0.9375rem,1.35vw,1rem)] text-black"
                 style={{
                   fontFamily: "var(--font-roboto)",
                   lineHeight: 1.5,
+                  textWrap: "pretty",
                 }}
               >
                 {card.subtitle}
@@ -75,7 +73,7 @@ export function ShowcasePair() {
 
             <a
               href={card.href}
-              className="shrink-0 self-end uppercase text-black underline text-[1rem]"
+              className="shrink-0 self-end whitespace-nowrap uppercase text-black underline text-[clamp(0.9375rem,1.35vw,1rem)]"
               style={{
                 fontFamily: "var(--font-roboto)",
                 lineHeight: 1.5,
