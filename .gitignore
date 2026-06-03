@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ShipStudio metadata
+.shipstudio/
+
+# Local Claude permission history
+.claude/settings.local.json

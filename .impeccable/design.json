@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-03T11:05:00Z",
+  "title": "Design System: Suit U",
+  "extensions": {
+    "colorMeta": {
+      "ink-black": { "role": "primary", "displayName": "Ink Black", "canonical": "#000000", "tonalRamp": ["#000000", "#0a0a0a", "#141414", "#202020", "#2e2e2e", "#3d3d3d", "#525252", "#6b6b6b"] },
+      "gallery-charcoal": { "role": "secondary", "displayName": "Gallery Charcoal", "canonical": "#202020", "tonalRamp": ["#0a0a0a", "#161616", "#202020", "#2c2c2c", "#3a3a3a", "#4a4a4a", "#5c5c5c", "#707070"] },
+      "soft-stone": { "role": "secondary", "displayName": "Soft Stone", "canonical": "#f4f4f4", "tonalRamp": ["#1f1f1f", "#3d3d3d", "#5c5c5c", "#7d7d7d", "#a0a0a0", "#c4c4c4", "#e0e0e0", "#f4f4f4"] },
+      "cream": { "role": "tertiary", "displayName": "Cream", "canonical": "#f8f6ea", "tonalRamp": ["#3a3826", "#54513a", "#706c50", "#8e8a69", "#aeaa86", "#cfcca8", "#e6e3cd", "#f8f6ea"] },
+      "pure-white": { "role": "neutral", "displayName": "Pure White", "canonical": "#ffffff", "tonalRamp": ["#262626", "#404040", "#595959", "#737373", "#a3a3a3", "#d4d4d4", "#ededed", "#ffffff"] },
+      "near-black": { "role": "neutral", "displayName": "Near Black", "canonical": "#171717", "tonalRamp": ["#171717", "#262626", "#373737", "#4a4a4a", "#636363", "#808080", "#a8a8a8", "#d6d6d6"] },
+      "placeholder-grey": { "role": "neutral", "displayName": "Placeholder Grey", "canonical": "#9ca3af", "tonalRamp": ["#1f2430", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#cbd1d9", "#e2e6eb", "#f3f4f6"] }
+    },
+    "typographyMeta": {
+      "wordmark": { "displayName": "Wordmark / Display", "purpose": "'SUITS U' only — the single use of Arges Condensed, in nav and footer." },
+      "hero": { "displayName": "Hero", "purpose": "Landing headline over full-bleed photography. The loudest type on the site." },
+      "heading": { "displayName": "Heading", "purpose": "All section titles. Roman Arges, uppercase, 700, 2px tracking." },
+      "body": { "displayName": "Body", "purpose": "Section copy and descriptions in Roboto Flex. Hold to 65–75ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, placeholders, store names, badges. Uppercase, short strings only." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-opacity", "value": "opacity 0.2s", "purpose": "Hover drops interactive elements to opacity 0.8 — the only resting-state transition." },
+      { "name": "focus-ring", "value": "outline 2px solid currentColor; outline-offset 2px", "purpose": "Keyboard focus indicator on all interactive elements." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Secondary Button (White)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "The workhorse outline CTA on black surfaces.",
+      "html": "<button type=\"button\" class=\"ds-btn-secondary\">Shop All</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; background: transparent; color: #ffffff; border: 1px solid #ffffff; border-radius: 0; padding: 0.75rem 1.5rem; font-family: 'Roboto Flex', system-ui, sans-serif; font-size: 1rem; line-height: 1.5; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; } .ds-btn-secondary:hover { opacity: 0.8; } .ds-btn-secondary:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button (Cream)",
+      "kind": "button",
+      "refersTo": "button-secondary-cream",
+      "description": "Outline CTA in the cream accent — used on black across product sections.",
+      "html": "<button type=\"button\" class=\"ds-btn-secondary-cream\">Explore Popular Styles</button>",
+      "css": ".ds-btn-secondary-cream { display: inline-flex; align-items: center; background: transparent; color: #f8f6ea; border: 1px solid #f8f6ea; border-radius: 0; padding: 0.75rem 1.5rem; font-family: 'Roboto Flex', system-ui, sans-serif; font-size: 1rem; line-height: 1.5; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; } .ds-btn-secondary-cream:hover { opacity: 0.8; } .ds-btn-secondary-cream:focus-visible { outline: 2px solid #f8f6ea; outline-offset: 2px; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid white fill, black text — emphasized store / home-location button.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Maidstone</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; background: #ffffff; color: #000000; border: 1px solid #ffffff; border-radius: 0; padding: 0.75rem 1.5rem; font-family: 'Roboto Flex', system-ui, sans-serif; font-size: 1rem; line-height: 1.5; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; } .ds-btn-primary:hover { opacity: 0.8; } .ds-btn-primary:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Email Input",
+      "kind": "input",
+      "refersTo": "input-email",
+      "description": "Newsletter email field — square, white fill, uppercase placeholder.",
+      "html": "<input type=\"email\" class=\"ds-input-email\" placeholder=\"EMAIL ADDRESS\" />",
+      "css": ".ds-input-email { width: 100%; background: #ffffff; color: #000000; border: 1px solid #ffffff; border-radius: 0; padding: 0.75rem; font-family: 'Roboto Flex', system-ui, sans-serif; font-size: 1rem; text-transform: uppercase; } .ds-input-email::placeholder { text-transform: uppercase; color: #9ca3af; } .ds-input-email:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "heading",
+      "description": "Uppercase Roman Arges section title with the signature 2px tracking.",
+      "html": "<h2 class=\"ds-heading\">Best Sellers</h2>",
+      "css": ".ds-heading { margin: 0; color: #ffffff; font-family: 'Arges', 'Anton', Impact, sans-serif; font-weight: 700; font-size: clamp(2.5rem, 6vw, 3.75rem); line-height: 1.2; letter-spacing: 0.125rem; text-transform: uppercase; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "wordmark",
+      "description": "The brand logotype — the only use of Arges Condensed.",
+      "html": "<span class=\"ds-wordmark\">SUITS U</span>",
+      "css": ".ds-wordmark { color: #ffffff; font-family: 'Arges Condensed', 'Arges', 'Anton', Impact, sans-serif; font-weight: 700; font-size: 3.125rem; line-height: 0.8; letter-spacing: 0; text-transform: uppercase; }"
+    },
+    {
+      "name": "Showcase Card",
+      "kind": "card",
+      "refersTo": "showcase-card",
+      "description": "The signature inverted card — dark type on Soft Stone, three-point layout.",
+      "html": "<article class=\"ds-showcase\"><h3 class=\"ds-showcase-title\">Custom Suits</h3><div class=\"ds-showcase-foot\"><p class=\"ds-showcase-sub\">Elevating your corporate wardrobe</p><a href=\"#\" class=\"ds-showcase-link\">Shop now</a></div></article>",
+      "css": ".ds-showcase { position: relative; display: flex; flex-direction: column; justify-content: space-between; background: #f4f4f4; color: #000000; border-radius: 0; padding: 3rem; min-height: 24rem; aspect-ratio: 752 / 1010; } .ds-showcase-title { margin: 0; font-family: 'Arges', 'Anton', Impact, sans-serif; font-weight: 700; font-size: 3.75rem; line-height: 1.2; text-transform: uppercase; max-width: 7.5rem; } .ds-showcase-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; } .ds-showcase-sub { margin: 0; font-family: 'Roboto Flex', system-ui, sans-serif; font-size: 1rem; line-height: 1.5; } .ds-showcase-link { font-family: 'Roboto Flex', system-ui, sans-serif; font-size: 1rem; line-height: 1.5; text-transform: uppercase; text-decoration: underline; color: #000000; white-space: nowrap; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Black Gallery",
+    "overview": "Suit U treats the screen as a black gallery wall and each garment photograph as the framed work hung on it. The surface is near-total black, edge to edge, and the photography is the only thing allowed to be loud. Cream is not a background color here, it is the studio backdrop the suits were shot against, bleeding through the edges of the frames. The interface is deliberately architectural rather than minimal-by-timidity: every edge is a true 90° corner, every divider a 1px hairline, every button a flat outlined rectangle. This system explicitly rejects generic ecommerce — no rounded cards with drop shadows, no gradient flourishes, no motion that competes with shopping.",
+    "keyCharacteristics": [
+      "Black gallery wall as the dominant, near-universal surface.",
+      "Full-bleed photography is the hero; the UI recedes around it.",
+      "Square corners everywhere (0px radius), no exceptions.",
+      "Flat by default: depth comes from photo-against-black contrast, never shadows.",
+      "Two-register Arges typography (Condensed wordmark + Roman headings), uppercase, structural.",
+      "Cream as a single warm accent, read as studio backdrop, never as a body fill."
+    ],
+    "rules": [
+      { "name": "The Gallery Wall Rule", "body": "Black is the default surface and the page returns to it between every section. Light surfaces (Soft Stone, Gallery Charcoal) are deliberate exceptions that frame a specific moment, never the resting state.", "section": "colors" },
+      { "name": "The Cream-Is-Backdrop Rule", "body": "Cream appears as accent borders, label text on black, and the photographic studio backdrop. It is forbidden as a large body background — the warm-paper landing-page move is exactly what this brand is not.", "section": "colors" },
+      { "name": "The Two-Width Rule", "body": "Condensed Arges is the wordmark and nothing else. Roman Arges is every other heading. Never swap them; the Condensed face on a section heading reads as a different brand.", "section": "typography" },
+      { "name": "The 2px Heading Rule", "body": "Section headings always carry letter-spacing: 0.125rem (2px). It is what separates an Arges heading from a generic uppercase sans.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Surfaces never lift with shadow. If a region needs to separate from the black wall, it changes value (to Charcoal or Stone) or is bounded by a 1px hairline, never blurred elevation.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep black (#000000) as the default surface and return to it between sections (the Gallery Wall Rule).",
+      "Do let full-bleed photography lead every section; the garment is the hero, the UI recedes.",
+      "Do use square corners (0px radius) on every button, card, input, and image tile, without exception.",
+      "Do set section headings in Roman Arges, uppercase, 700, with letter-spacing: 0.125rem (the 2px Heading Rule).",
+      "Do reserve Arges Condensed for the 'SUITS U' wordmark only (the Two-Width Rule).",
+      "Do keep cream as accent, border, label, and studio backdrop only.",
+      "Do convey depth through value blocking and 1px hairlines, never shadow.",
+      "Do give product images priority / correct sizes and meaningful alt text; empty alt only for the decorative hero backdrop."
+    ],
+    "donts": [
+      "Don't ship generic ecommerce: no rounded cards, drop shadows, or template product grids.",
+      "Don't use cream as a large body background — the warm-paper / cream landing-page move is exactly this brand's anti-reference.",
+      "Don't put Arges Condensed on a section heading, or omit the 2px tracking; both read as a different, lesser brand.",
+      "Don't add gradients, glassmorphism, or decorative effects over the photography.",
+      "Don't use motion that competes with shopping; animation stays at opacity/state level and respects prefers-reduced-motion.",
+      "Don't use vague promotional copy or buzzwords; speak to fit, alteration, occasion, and wardrobe upgrade specifically.",
+      "Don't let any heading overflow its container; test the uppercase Arges copy at every breakpoint.",
+      "Don't drop body or placeholder text below WCAG AA contrast; Placeholder Grey is for placeholders, never body copy."
+    ]
+  }
+}

@@ -1,15 +1,196 @@
 @import "tailwindcss";
 
+/*
+ * All typography and spacing tokens are in `rem`.
+ * 1rem = 16px. See docs/guidelines.md §1 before adding new sizes.
+ */
+
+/*
+ * Arges (Blaze Type, proprietary) — TRIAL files.
+ * Source: /public/fonts/arges-trial/ — Blaze Type trial pack.
+ *
+ * Two width families ship in the trial:
+ *   - "Arges"           → ArgesNormal-Trial-*    (Roman width, Figma's default)
+ *   - "Arges Condensed" → ArgesCondensed-Trial-* (narrower variant)
+ *
+ * Roman + Oblique pairs are mapped via font-style. The body of the project
+ * uses --font-display which resolves to "Arges" → Anton → Impact.
+ *
+ * BEFORE PRODUCTION: replace trial files with a licensed copy.
+ * The trial license forbids production / commercial use.
+ *
+ * Note: 9 standard CSS weights map onto Arges's 12 weights — Heavy / ExtraHeavy
+ * are skipped. Add them with a non-standard numeric weight if needed.
+ */
+
+/* Arges (Roman width) — Romans */
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Hairline.otf") format("opentype");
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Thin.otf") format("opentype");
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Light.otf") format("opentype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Regular.otf") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Medium.otf") format("opentype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-SemiBold.otf") format("opentype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Bold.otf") format("opentype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-ExtraBold.otf") format("opentype");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-Black.otf") format("opentype");
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+/* Arges (Roman width) — Obliques */
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-RegularOblique.otf") format("opentype");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-MediumOblique.otf") format("opentype");
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-SemiBoldOblique.otf") format("opentype");
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Arges";
+  src: url("/fonts/arges-trial/ArgesNormal-Trial-BoldOblique.otf") format("opentype");
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+/* Arges Condensed — Romans (use via font-family: "Arges Condensed") */
+@font-face {
+  font-family: "Arges Condensed";
+  src: url("/fonts/arges-trial/ArgesCondensed-Trial-CondensedRegular.otf") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges Condensed";
+  src: url("/fonts/arges-trial/ArgesCondensed-Trial-CondensedMedium.otf") format("opentype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges Condensed";
+  src: url("/fonts/arges-trial/ArgesCondensed-Trial-CondensedSemiBold.otf") format("opentype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges Condensed";
+  src: url("/fonts/arges-trial/ArgesCondensed-Trial-CondensedBold.otf") format("opentype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges Condensed";
+  src: url("/fonts/arges-trial/ArgesCondensed-Trial-CondensedExtraBold.otf") format("opentype");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Arges Condensed";
+  src: url("/fonts/arges-trial/ArgesCondensed-Trial-CondensedBlack.otf") format("opentype");
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand palette — Figma tokens */
+  --color-cream: #f8f6ea; /* Figma: Foundation/Yellow/Normal */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream: var(--color-cream);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-roboto: var(--font-roboto), system-ui, sans-serif;
+  /*
+   * --font-display = brand wordmark font.
+   *   1. "Arges"          — proprietary (Blaze Type). Add @font-face below to enable.
+   *   2. Anton (Google)   — free stand-in. Renders today until Arges is licensed.
+   *   3. Impact / serif   — last-resort system fallback.
+   *
+   * Adding the licensed Arges files later requires NO code changes — just add
+   * an @font-face { font-family: "Arges"; src: url(...); } block below and the
+   * cascade prefers it automatically.
+   */
+  --font-display: "Arges Condensed", "Arges", var(--font-display-fallback),
+    "Impact", "Helvetica Neue", sans-serif;
+
+  /*
+   * --font-heading = section headings (Figma "Heading/H2": Arges Bold).
+   * Unlike the wordmark, headings use the Roman (Normal) width of Arges —
+   * NOT the Condensed face. Keep this distinct from --font-display.
+   */
+  --font-heading: "Arges", var(--font-display-fallback), "Impact",
+    "Helvetica Neue", sans-serif;
+
+  /* Type scale — rem only. Pair with --leading-* for line-height. */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;     /* 72px */
+
+  /*
+   * Fluid heading scale → generates `text-fluid-*` utilities. Each clamp is
+   * tuned so its PREFERRED term lands on the exact Figma value at both anchors
+   * (mobile 375px, desktop 1440px) and scales smoothly between, replacing the
+   * old fixed-size breakpoint swap. min = Figma mobile value (holds on small
+   * phones); max = Figma desktop value (holds past 1440 in the capped frame).
+   * The two *-inv tokens are the intentionally inverted headings (mobile larger
+   * than desktop): they scale DOWN with width instead of jumping at the swap.
+   */
+  --text-fluid-hero: clamp(4.375rem, calc(1.954rem + 10.329vw), 11.25rem);     /* 70 → 180 */
+  --text-fluid-hero-sub: clamp(2.5rem, calc(0.519rem + 8.451vw), 8.125rem);    /* 40 → 130 */
+  --text-fluid-h2: clamp(2.5rem, calc(2.06rem + 1.878vw), 3.75rem);            /* 40 → 60  */
+  --text-fluid-h2-50: clamp(2.5rem, calc(2.28rem + 0.939vw), 3.125rem);        /* 40 → 50  */
+  --text-fluid-h2-inv: clamp(3.125rem, calc(3.97rem - 0.939vw), 3.75rem);      /* 60 → 50  */
+  --text-fluid-cta: clamp(2.5rem, calc(2.456rem + 0.188vw), 2.625rem);         /* 40 → 42  */
+  --text-fluid-footer: clamp(2.125rem, calc(2.632rem - 0.563vw), 2.5rem);      /* 40 → 34  */
+  --text-fluid-nav: clamp(2.5rem, calc(1.786rem + 1.488vw), 3.125rem);         /* 40 → 50 (≥768) */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +201,12 @@
 }
 
 body {
-  background: var(--background);
+  /*
+   * The Black Gallery: the body is the wall. On ultra-wide viewports the
+   * capped content frame (see layout.tsx) centers on this black, so the
+   * side margins read as intentional gallery matting rather than white gaps.
+   */
+  background: #000000;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
